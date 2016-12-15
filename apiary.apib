@@ -64,6 +64,32 @@ Een beetje uitleg bij de verschillende parameters:
 
 + Response 200 (application/json)
 
+# Group Dienstregeling
+
+## Halteregeling [/rise-api-core/dienstregeling/halteVolgorde/{entiteit_nummer}/{lijnnummer_intern}/{richtingcode}/{language}]
+
+### GET
++ Parameters
+    + entiteit_nummer   (required, number, `2`)
+    + lijnnummer_intern (required, number, `292`)
+    + richtingcode      (required, number, `7`)
+    + language          (required, string, `nl`)
+
++ Response 200 (application/json)
+
+## Dienstregeling [/rise-api-core/dienstregeling/dienstregeling/{entiteit_nummer}/{lijnnummer_intern}/{richtingcode}/{date}/{alle_haltes}/{language}]
+
+### GET
++ Parameters
+    + entiteit_nummer   (required, number, `2`)
+    + lijnnummer_intern (required, number, `10`)
+    + richtingcode      (required, number, `7`)
+    + date              (required, string, `04-07-2015`)
+    + alle_haltes       (required, boolean, `true`) ... Zet op `false` om enkel hoofdhaltes te tonen
+    + language          (required, string, `nl`)
+
++ Response 200 (application/json)
+
 # Group Haltes
 Ophalen van haltes data
 
@@ -108,33 +134,9 @@ Ophalen van haltes data
 
 ### GET
 + Parameters
-    + entiteit_nummer   (required, number, `2`)
-    + lijnnummer_intern (required, number, `10`)
-    + richtingcode      (required, number, `7`)
-
-+ Response 200 (application/json)
-
-## Halteregeling [/rise-api-core/dienstregeling/halteVolgorde/{entiteit_nummer}/{lijnnummer_intern}/{richtingcode}/{language}]
-
-### GET
-+ Parameters
-    + entiteit_nummer   (required, number, `2`)
-    + lijnnummer_intern (required, number, `292`)
-    + richtingcode      (required, number, `7`)
-    + language          (required, string, `nl`)
-
-+ Response 200 (application/json)
-
-## Dienstregeling [/rise-api-core/dienstregeling/dienstregeling/{entiteit_nummer}/{lijnnummer_intern}/{richtingcode}/{date}/{alle_haltes}/{language}]
-
-### GET
-+ Parameters
-    + entiteit_nummer   (required, number, `2`)
-    + lijnnummer_intern (required, number, `10`)
-    + richtingcode      (required, number, `7`)
-    + date              (required, string, `04-07-2015`)
-    + alle_haltes       (required, boolean, `true`) ... Zet op `false` om enkel hoofdhaltes te tonen
-    + language          (required, string, `nl`)
+    + entiteit_nummer   (required, number, `4`)
+    + lijnnummer_intern (required, number, `603`)
+    + richtingcode      (required, number, `10`)
 
 + Response 200 (application/json)
 
@@ -248,5 +250,16 @@ Ophalen van haltes data
     + category_id (required, string, `tcm:3-428-1024`)
     + language_id (required, number, `3`) ... Taal ID
     + page (required, number, `1`) ... Paginatie nummer
+
++ Response 200 (application/json)
+
+# Group Coordinaten
+
+## Convert [/rise-api-core/coordinaten/convert/{latitude}/{longitude}]
+
+### GET
++ Parameters
+    + latitude (required, number, `50.93276030000001`)
+    + longitude (required, number, `5.342921199999978`)
 
 + Response 200 (application/json)
